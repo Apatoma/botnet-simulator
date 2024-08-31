@@ -1,121 +1,87 @@
-Botnet Simulator
-Overview
+# 🤖 Botnet Simulator
 
-The Botnet Simulator is a web application that allows users to simulate the creation, expansion, and mitigation of a botnet. This platform provides a visual representation of how botnets operate, demonstrating how they can propagate across a network, launch attacks like DDoS, and how these threats can be mitigated through various strategies. The goal is to offer a tool for ethical hackers, security researchers, and educators to understand and explore botnet behavior in a controlled environment.
-Features
+Welcome to the **Botnet Simulator**! This web application allows users to simulate the creation, expansion, and mitigation of a botnet. The platform provides a visual representation of how botnets operate, demonstrating their propagation across a network, attacks like DDoS, and mitigation strategies. It’s a valuable tool for ethical hackers, security researchers, and educators to explore botnet behavior in a controlled environment.
 
-    Botnet Visualization: Displays a dynamic map of bots within the network, showing their status and activity.
-    Attack Simulation: Launches simulated attacks (e.g., DDoS, Spam) from compromised bots against specified targets.
-    Mitigation Controls: Implements strategies to mitigate or neutralize active bots in the network.
-    Interactive Frontend: Provides a user-friendly interface for monitoring the botnet and executing controls.
-    Backend API: Powers the simulation logic and handles requests from the frontend.
+## ✨ Features
 
-Project Structure
+- 🌐 **Botnet Visualization**: Displays a dynamic map of bots within the network, showing their status and activity.
+- 🚀 **Attack Simulation**: Launch simulated attacks (e.g., DDoS, Spam) from compromised bots against specified targets.
+- 🛡️ **Mitigation Controls**: Implements strategies to mitigate or neutralize active bots in the network.
+- 🖥️ **Interactive Frontend**: Provides a user-friendly interface for monitoring the botnet and executing controls.
+- 🔗 **Backend API**: Powers the simulation logic and handles requests from the frontend.
 
-arduino
+## 🛠️ Technology Stack
 
-botnet-simulator/
-├── backend/
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── models.py
-│   │   ├── routes.py
-│   │   └── utils.py
-│   ├── config.py
-│   ├── requirements.txt
-│   └── run.py
-├── frontend/
-│   ├── public/
-│   │   ├── index.html
-│   └── src/
-│       ├── components/
-│       │   ├── BotnetMap.js
-│       │   ├── AttackControls.js
-│       │   └── MitigationControls.js
-│       ├── App.js
-│       ├── index.js
-│       └── styles.css
-└── README.md
+**Backend**:
+- 🐍 **Python**
+- 🔥 **Flask** (for handling API requests)
+- 🗄️ **SQLite** (for data storage)
 
-Getting Started
-Prerequisites
+**Frontend**:
+- ⚛️ **React.js**
+- 🎨 **CSS** (for styling)
 
-    Python 3.8+
-    Node.js 14+
-    npm (or yarn)
+## 🚀 Getting Started
 
-Setup Instructions
-1. Backend Setup
+Follow these steps to set up the project locally.
 
-    Navigate to the backend directory:
+### Prerequisites
 
-    bash
+- **Python 3.8+**
+- **Node.js 14+**
+- **npm** (or yarn)
 
-cd backend/
+### Setup Instructions
 
-Install the required Python packages:
-
-bash
-
-pip install -r requirements.txt
-
-Run the backend server:
-
-bash
-
+1. **Backend Setup**:
+    ```bash
+    cd backend/
+    pip install -r requirements.txt
     python run.py
+    ```
+    The server will start on [http://localhost:5000](http://localhost:5000).
 
-    The server will start on http://localhost:5000.
-
-2. Frontend Setup
-
-    Navigate to the frontend directory:
-
-    bash
-
-cd frontend/
-
-Install the required npm packages:
-
-bash
-
-npm install
-
-Run the frontend development server:
-
-bash
-
+2. **Frontend Setup**:
+    ```bash
+    cd frontend/
+    npm install
     npm start
+    ```
+    The frontend will be accessible at [http://localhost:3000](http://localhost:3000).
 
-    The frontend will be accessible at http://localhost:3000.
+### Connecting Frontend and Backend
 
-Connecting Frontend and Backend
+Ensure that both the backend (Flask) and frontend (React) servers are running. The React frontend will make API calls to the Flask backend at [http://localhost:5000](http://localhost:5000). If necessary, configure a proxy in the React app's `package.json` to route requests correctly.
 
-Ensure that both the backend (Flask) and frontend (React) servers are running. The React frontend will make API calls to the Flask backend at http://localhost:5000. If necessary, you can configure a proxy in the React app's package.json to route requests correctly.
-Initializing the Database
+### Initializing the Database
 
-The database will be automatically created when the backend server is started. It will store information about bots, attacks, and their statuses. You can interact with the API endpoints to create bots, start attacks, and apply mitigation strategies.
-API Endpoints
-Bots
+The database will be automatically created when the backend server starts. It will store information about bots, attacks, and their statuses. Interact with the API endpoints to create bots, start attacks, and apply mitigation strategies.
 
-    GET /bots: Retrieve the list of all bots in the network.
-    POST /create_bot: Create a new bot in the network.
-    POST /mitigate_bot: Mitigate a specific bot by ID.
+## 📡 API Endpoints
 
-Attacks
+**Bots**:
+- `GET /bots`: Retrieve the list of all bots in the network.
+- `POST /create_bot`: Create a new bot in the network.
+- `POST /mitigate_bot`: Mitigate a specific bot by ID.
 
-    POST /start_attack: Start an attack from a specific bot against a target.
+**Attacks**:
+- `POST /start_attack`: Start an attack from a specific bot against a target.
 
-Future Enhancements
+## 🛤️ Future Enhancements
 
-    Real-time Traffic Analysis: Visualize the traffic generated by bots in real-time.
-    Advanced Attack Types: Implement additional types of attacks, such as ransomware or phishing simulations.
-    Machine Learning for Mitigation: Introduce machine learning algorithms to automatically detect and mitigate bot activity.
-    Detailed Post-Attack Reports: Generate comprehensive reports after each simulated attack, including visual graphs and statistics.
+- 📊 **Real-time Traffic Analysis**: Visualize the traffic generated by bots in real-time.
+- 💥 **Advanced Attack Types**: Implement additional types of attacks, such as ransomware or phishing simulations.
+- 🤖 **Machine Learning for Mitigation**: Introduce machine learning algorithms to automatically detect and mitigate bot activity.
+- 📈 **Detailed Post-Attack Reports**: Generate comprehensive reports after each simulated attack, including visual graphs and statistics.
 
-Contributing
+## 🧑‍💻 Contributing
 
-Contributions are welcome! Please fork this repository, make your changes, and submit a pull request.
-License
+Contributions are welcome! Please fork the repository, make your changes, and submit a pull request.
 
-This project is licensed under the MIT License.
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+Made with ❤️ by [Alejandro](https://github.com/Apatoma)
